@@ -859,6 +859,10 @@ serverFiles:
         kubernetes_sd_configs:
           - role: endpoints
 
+        static_configs:
+          - targets:
+            - review-agence-nn7rwl-mysql.symf-tuto:9104
+
         relabel_configs:
           - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
             action: keep
@@ -1025,7 +1029,7 @@ grafana:
     ## Labels to be added to the Ingress
     ##
     labels: {}
-    
+
     ## Hostnames.
     ## Must be provided if Ingress is enabled.
     ##
