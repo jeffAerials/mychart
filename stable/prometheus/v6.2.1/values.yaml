@@ -963,11 +963,19 @@ serverFiles:
             action: replace
             target_label: kubernetes_pod_name
 
-      - job_name: 'mysql-review'
-        static_configs:
-          - targets:
-            review-agence-nn7rwl-mysql.symf-tuto:9104
 
+extraScrapeConfigs:
+   - job_name: 'mysql'
+     static_configs:
+       - targets:
+         - review-agence-nn7rwl-mysql.symf-tuto:9104
+  #   relabel_configs:
+  #     - source_labels: [__address__]
+  #       target_label: __param_target
+  #     - source_labels: [__param_target]
+  #       target_label: instance
+  #     - target_label: __address__
+#       replacement: prometheus-blackbox-exporter:9115
 networkPolicy:
   ## Enable creation of NetworkPolicy resources.
   ##
