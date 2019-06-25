@@ -717,6 +717,11 @@ serverFiles:
           - targets:
             - localhost:9090
 
+      - job_name: 'mysql-symf-tuto-production'
+        static_configs:
+          - targets:
+            - 'production-mysql.symf-tuto:9104'
+
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
       # This uses separate scrape configs for cluster components (i.e. API server, node)
       # and services to allow each to use different authentication configs.
@@ -1025,7 +1030,7 @@ grafana:
     ## Labels to be added to the Ingress
     ##
     labels: {}
-    
+
     ## Hostnames.
     ## Must be provided if Ingress is enabled.
     ##
