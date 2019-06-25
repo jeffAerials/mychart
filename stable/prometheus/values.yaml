@@ -1232,8 +1232,7 @@ serverFiles:
 extraScrapeConfigs:
   - job_name: 'mysql-sym-tuto-production'
     static_configs:
-      - targets:
-        - production-mysql.symf-tuto:9104
+      - targets: ['production-mysql.symf-tuto:9104']
   # - job_name: 'prometheus-blackbox-exporter'
   #   metrics_path: /probe
   #   params:
